@@ -1,5 +1,5 @@
-import Logo from './Frame.svg';
-export {Logo};
+import Logo from './Logo.svg';
+import NullPhoto from './null-photo.png';
+import ArrowBack from './arrow-back.svg';
 
-import Logo1 from './BackButton.svg';
-export {Logo1};
+export {Logo, NullPhoto, ArrowBack};
