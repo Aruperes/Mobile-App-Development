@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import {NullPhoto} from '../../assets/icon';
 import {Button, Gap} from '../../components/atoms';
 
-export default function MoneyTracker() {
+export default function MoneyTracker({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -27,9 +27,12 @@ export default function MoneyTracker() {
       </View>
       <View style={styles.transactionSection}>
         <Text style={styles.transactionTitle}>Add Transaction</Text>
-        <Button text="Cash On Hand" />
+        <Button
+          text="Cash On Hand"
+          onPress={() => navigation.navigate('Transaction')}
+        />
         <Gap height={26} />
-        <Button text="Cash On Bank" />
+        <Button text="Cash On Bank"  onPress={() => navigation.navigate('Transaction1')} />
       </View>
     </View>
   );
