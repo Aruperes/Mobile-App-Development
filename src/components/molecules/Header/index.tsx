@@ -26,6 +26,5 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     fontSize: 22,
     marginLeft: 34,
-    color: '#020202',
   },
 });

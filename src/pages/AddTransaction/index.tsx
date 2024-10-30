@@ -1,52 +1,47 @@
 import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import React from 'react';
 import {Button, Gap} from '../../components/atoms';
-import {
-  Header,
-  TextInput,
-  Transaction as TransactionItem,
-} from '../../components/molecules';
+import {Header, TransactionCard, TextInput} from '../../components/molecules';
 
-const Transaction1 = ({navigation}) => {
+const AddTransaction = ({navigation, route}) => {
+  const {title} = route.params;
   return (
     <ScrollView
       style={styles.pageContainer}
-      showsVerticalScrollIndicator={false}>
-      <Header
-        text="Cash on Bank"
-        backButton
-        onPress={() => navigation.goBack()}
-      />
+      showsVerticalScrollIndicato={false}>
+      <Header text={title} backButton onPress={() => navigation.goBack()} />
       <View style={styles.contentWrapper}>
         <TextInput label="Description" placeholder="Add the description" />
         <Gap height={17} />
-        <TextInput label="Type" placeholder="Debit / Credit" />
+        <TextInput label="Type" placeholder="Debit / Kredit" />
         <Gap height={17} />
         <Button text="Save" />
         <Gap height={17} />
         <Text style={styles.subTitle}>Last 3 Transactions</Text>
-        <TransactionItem
+        <TransactionCard
           date="17 April 2024"
           desc="Water, Food"
-          price="300.000"
-          type="Kredit"
+          price="-Rp. 400.000"
+          type="debit"
         />
-        <TransactionItem
-          date="18 April 2024"
+        <TransactionCard
+          date="17 April 2024"
           desc="Office supplies"
-          price="300.000"
-          type="Kredit"
+          price="-Rp. 400.000"
+          type="debit"
         />
-        <TransactionItem
-          date="19 April 2024"
-          desc="TopUp"
-          price="300.000"
-          type="Debit"
+        <TransactionCard
+          date="17 April 2024"
+          desc="Top Up"
+          price="Rp. 400.000"
+          type="credit"
         />
       </View>
     </ScrollView>
   );
 };
+
+export default AddTransaction;
 
 const styles = StyleSheet.create({
   pageContainer: {
@@ -60,11 +55,9 @@ const styles = StyleSheet.create({
     paddingVertical: 18,
   },
   subTitle: {
-    fontFamily: 'Poppins-Bold',
-    color: '#020202',
+    fontFamily: 'Poppins-Medium',
+    color: '#000000',
     fontSize: 16,
     marginVertical: 12,
   },
 });
-
-export default Transaction1;
