@@ -3,10 +3,10 @@ import SplashScreen from './src/pages/SplashScreen';
 import SignIn from './src/pages/SignIn';
 import SignUp from './src/pages/SignUp';
 import Home from './src/pages/Home';
-import Transaction from './src/pages/Transaction';
-import Transaction1 from './src/pages/Transaction1';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import AddTransaction from './src/pages/AddTransaction';
+import FlashMessage from 'react-native-flash-message';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,16 +35,12 @@ const App = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="Transaction"
-          component={Transaction}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Transaction1"
-          component={Transaction1}
+          name="AddTransaction"
+          component={AddTransaction}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
+      <FlashMessage position="top" />
     </NavigationContainer>
   );
 };
